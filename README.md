@@ -1,11 +1,11 @@
 # TODO MVC Project
 
 ## Setup
-- [] setup JDK-17
-- [] setup maven
-- [] open project with intelliJ
-- [] install chrome browser
-- [] install firefox browser
+- [ ] setup JDK-17
+- [ ] setup maven
+- [ ] open project with intelliJ
+- [ ] install chrome browser
+- [ ] install firefox browser
 ## How to run
 ```shell
 $ mvn clean test
