@@ -5,11 +5,13 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+permissions:
+  id-token: write
+  contents: read
+  checks: write
 jobs:
-  build:
+  e2e:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -20,3 +22,10 @@ jobs:
         cache: maven
     - name: Test
       run: mvn clean test
+    - name: Report
+      uses: dorny/test-reporter@v1
+      if: success() || failure()
+      with:
+        name: Test Results
+        path: ${{ github.workspace }}/target/surefire-reports/TEST-*.xml
+        reporter: java-junit
