@@ -47,7 +47,7 @@ public class ToDoMVCTest extends TestBase {
         toDoMVCPage.markComplete(taskName);
 
         int itemLeftAfter = toDoMVCPage.getItemLeft();
-        Assert.assertEquals(itemLeftBefore-itemLeftAfter,0);
+        Assert.assertEquals(itemLeftBefore-itemLeftAfter,1);
 
         toDoMVCPage.filterTask("All");
         Assert.assertTrue(toDoMVCPage.isTaskDisplayed(taskName));
